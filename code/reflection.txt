@@ -7,9 +7,11 @@ aggregation, reset_index, pivot_table, fill_value, melt, lineage), and make it
 actionable.
 
 This assignment went better generally than some previous assignments, in part to really slowing down
-and checking the tests after each step, and making sure that the code I wrote passed each test before moving on.
-It saved me some frustration at the end of the assignment because I knew the previous tests would pass. It was
-helpful to work with .pivot() and .melt() in the modules, especially since I spent a lot of time studying it for the midterm.
+and checking the tests after each step by running the test_code.py files, and making sure that the code 
+I wrote passed each test before moving on. It saved me some frustration at the end of the assignment because
+I knew the previous tests would pass. It was helpful to work with .pivot() and .melt() in the modules, 
+especially since I spent a lot of time studying it for the midterm since the parameters confused me a little at first.
 In the future I want to continue taking assignments slower and reading everything first, and I can work on the actual 
 formation of the streamlit app (payroll_report_app.py) more for future assignments, I feel like I brush over it when it would be beneficial
-to take notes beforehand on everything instead of jumping in.
+to take notes beforehand on everything instead of jumping in, and write comments based off of the GitHub README directly 
+into the .py file before starting.
