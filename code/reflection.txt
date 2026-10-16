@@ -5,3 +5,11 @@ terminology from this assignment (grain, long vs. wide, vectorized .str methods,
 coerce, NaT, pd.to_datetime format, .dt, concat, ignore_index, group by, named
 aggregation, reset_index, pivot_table, fill_value, melt, lineage), and make it
 actionable.
+
+This assignment went better generally than some previous assignments, in part to really slowing down
+and checking the tests after each step, and making sure that the code I wrote passed each test before moving on.
+It saved me some frustration at the end of the assignment because I knew the previous tests would pass. It was
+helpful to work with .pivot() and .melt() in the modules, especially since I spent a lot of time studying it for the midterm.
+In the future I want to continue taking assignments slower and reading everything first, and I can work on the actual 
+formation of the streamlit app (payroll_report_app.py) more for future assignments, I feel like I brush over it when it would be beneficial
+to take notes beforehand on everything instead of jumping in.
