@@ -45,24 +45,38 @@ Test it: pytest tests/test_pipeline.py -k app
 # What the page does NOT do: cleaning, grouping, pivoting. If you find yourself
 # writing a groupby or a pivot_table here, that logic belongs in the package.
 
-import pandas as pd
 import streamlit as st
 
 import payroll
 
 
 st.title("Salt City Coffee — Quarterly Payroll Report")
-st.caption("Upload payroll exports to review the quarter, department by department, and week by week.")
+st.caption("Upload payroll exports to review the quarter, department by department, "
+"and week by week.")
 
 roster = payroll.load_employees()
-uploads = st.file_uploader("Quarterly payroll exports", type=["csv"], accept_multiple_files=True, key="exports")
+uploads = st.file_uploader(
+    "Quarterly payroll exports",
+    type=["csv"],
+    accept_multiple_files=True,
+    key="exports",
+)
 
 if uploads:
-    history = payroll.build_history([payroll.load_export(upload) for upload in uploads], roster)
+    history = payroll.build_history(
+        [payroll.load_export(upload) for upload in uploads],
+        roster,
+    )
 
-    unmatched = sorted(history.loc[history["department"].isna(), "employeeid"].drop_duplicates())
+    unmatched = sorted(
+        history.loc[history["department"].isna(), "employeeid"]
+        .drop_duplicates()
+    )
     if unmatched:
-        st.warning(f"Unmatched employee IDs were left out of the report: {', '.join(unmatched)}")
+        st.warning(
+            "Unmatched employee IDs were left out of the report: "
+            f"{', '.join(unmatched)}"
+        )
 
     matched = history.dropna(subset=["department"]).copy()
     departments = ["All"] + sorted(matched["department"].dropna().unique())

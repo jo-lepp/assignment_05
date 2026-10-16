@@ -79,7 +79,10 @@ def pay_by_month(history: pd.DataFrame) -> pd.DataFrame:
     This is the CSV the accountant imports, and — with `month` as the x axis —
     exactly the shape `st.bar_chart` draws as one bar per department.
     """
-    monthly = history[["month", "department", "gross_pay"]].dropna(subset=["department"])
+    monthly = (
+        history[["month", "department", "gross_pay"]]
+        .dropna(subset=["department"])
+    )
     pivot = monthly.pivot_table(
         index="month",
         columns="department",
